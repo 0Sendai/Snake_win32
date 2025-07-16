@@ -304,10 +304,14 @@ void game_screen(HWND hwnd, HDC hdc, enum screen_type_ screen_type) {
 		DeleteObject(oldbtm);
 		DeleteObject(brush);
 	}
-	else
+	else if (screen_type == PAUSE)
 	{
 		shadow_screen(hwnd, hdc, blendDC);
 		draw_continue_buttons(hwnd);
+	}
+	else
+	{
+		shadow_screen(hwnd, hdc, blendDC);
 	}
 	
 	// Make fonts for header
